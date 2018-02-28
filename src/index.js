@@ -19,8 +19,11 @@ class App extends React.Component {
       videos: [],
       selectedVideo: null
     };
+    this.videoSearch('surfing');
+  }
 
-    youTubeSearch({key: API_KEY, term: 'surfing'}, (videos) => {
+  videoSearch(searchTerm) {
+    youTubeSearch({key: API_KEY, term: searchTerm}, (videos) => {
       this.setState({ videos: videos, selectedVideo: videos[0] });
       // when you have key and value pairs with matching names you can do the following
       // this.setState({ videos });
@@ -30,7 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={ term => this.videoSearch(term) }/>
         <VideoDetail video={ this.state.selectedVideo }/>
         <VideoList 
           onVideoSelect={ video => this.setState({selectedVideo: video}) }
