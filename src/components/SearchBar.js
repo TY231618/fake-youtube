@@ -12,12 +12,33 @@ import ReactDOM from 'react-dom';
 //   }
 // }
 
+// class SearchBar extends React.Component {
+
+//   constructor(props) {
+//     super(props);
+
+//     this.state = { searchTerm: 'start search' };
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <input 
+//           value={this.state.searchTerm}
+//           onChange={event => this.setState({ searchTerm: event.target.value })} />
+//         <br />
+//         value of input: { this.state.searchTerm }
+//       </div>
+//     );
+//   }
+// }
+
 class SearchBar extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.state = { searchTerm: 'start search' };
+    this.state = { searchTerm: '' };
   }
 
   render() {
@@ -26,8 +47,6 @@ class SearchBar extends React.Component {
         <input 
           value={this.state.searchTerm}
           onChange={event => this.setState({ searchTerm: event.target.value })} />
-        <br />
-        value of input: { this.state.searchTerm }
       </div>
     );
   }
