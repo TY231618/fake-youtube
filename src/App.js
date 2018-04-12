@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from './components/header';
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
@@ -17,7 +18,7 @@ class App extends React.Component {
       videos: [],
       selectedVideo: null
     };
-    this.videoSearch('surfing');
+    this.videoSearch('skateboarding');
   }
 
   videoSearch(searchTerm) {
@@ -46,6 +47,7 @@ class App extends React.Component {
     const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 500 );
     return (
       <div>
+        <Header />
         <SearchBar onSearchTermChange={ videoSearch }/>
         <VideoDetail video={ this.state.selectedVideo }/>
         <VideoList 
