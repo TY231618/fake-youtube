@@ -8,7 +8,7 @@ The repository is written in [React](https://reactjs.org/) and [NPM](https://www
 
 **To start the app:**
 - To install dependencies, run: `npm install`
-- To run: `npm run start` (by default this starts on [localhost:8081](localhost:8081))
+- To run: `npm run start` (by default this starts on [localhost:8082](localhost:8082))
 
 ## Vision
 
